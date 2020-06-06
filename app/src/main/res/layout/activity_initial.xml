@@ -6,128 +6,128 @@
     android:layout_height="match_parent"
     tools:context=".Initial">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="99dp"
-        android:text="Bot id"
-        android:textColor="#000000"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginStart="12dp"-->
+<!--        android:layout_marginTop="99dp"-->
+<!--        android:text="Bot id"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold" />-->
 
-    <EditText
-        android:id="@+id/botid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="149dp"
-        android:layout_marginTop="93dp"
-        android:ems="10"
-        android:hint="x554321"
-        android:inputType="textPersonName" />
+<!--    <EditText-->
+<!--        android:id="@+id/botid"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="149dp"-->
+<!--        android:layout_marginTop="93dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="x554321"-->
+<!--        android:inputType="textPersonName" />-->
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="159dp"
-        android:text="Bot name"
-        android:textColor="#000000"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginStart="9dp"-->
+<!--        android:layout_marginTop="159dp"-->
+<!--        android:text="Bot name"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold" />-->
 
-    <EditText
-        android:id="@+id/botname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="149dp"
-        android:layout_marginEnd="48dp"
-        android:ems="10"
-        android:hint="YellowMessenger"
-        android:inputType="textPersonName" />
+<!--    <EditText-->
+<!--        android:id="@+id/botname"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginTop="149dp"-->
+<!--        android:layout_marginEnd="48dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="YellowMessenger"-->
+<!--        android:inputType="textPersonName" />-->
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="248dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="208dp"
-        android:checked="true"
-        android:text="Enable history"
-        android:textColor="#000000"
-        android:textOff="false"
-        android:textOn="true"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        tools:checked="true" />
+<!--    <Switch-->
+<!--        android:id="@+id/switch1"-->
+<!--        android:layout_width="248dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginStart="9dp"-->
+<!--        android:layout_marginTop="208dp"-->
+<!--        android:checked="true"-->
+<!--        android:text="Enable history"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textOff="false"-->
+<!--        android:textOn="true"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        tools:checked="true" />-->
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="300dp">
+<!--    <ScrollView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginTop="300dp">-->
 
-        <LinearLayout
-            android:id="@+id/payloadsDynamic"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical" />
+<!--        <LinearLayout-->
+<!--            android:id="@+id/payloadsDynamic"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical" />-->
 
 
-    </ScrollView>
+<!--    </ScrollView>-->
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="15dp"
-        android:layout_marginStart="319dp"
-        android:layout_marginTop="629dp"
-        android:clickable="true"
-        android:onClick="createBot"
-        app:backgroundTint="#B70D01"
-        app:srcCompat="@android:drawable/ic_menu_send" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/floatingActionButton2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        android:layout_marginStart="319dp"-->
+<!--        android:layout_marginTop="629dp"-->
+<!--        android:clickable="true"-->
+<!--        android:onClick="createBot"-->
+<!--        app:backgroundTint="#B70D01"-->
+<!--        app:srcCompat="@android:drawable/ic_menu_send" />-->
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="306dp"
-        android:layout_marginEnd="15dp"
-        android:clickable="true"
-        android:onClick="addDynamicView"
-        android:tint="#FBFBFB"
-        app:srcCompat="@android:drawable/ic_input_add" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/add"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginTop="306dp"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        android:clickable="true"-->
+<!--        android:onClick="addDynamicView"-->
+<!--        android:tint="#FBFBFB"-->
+<!--        app:srcCompat="@android:drawable/ic_input_add" />-->
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="300dp"
-        android:clickable="true"
-        android:onClick="deleteView"
-        android:tint="#FFFFFF"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/delete"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginEnd="14dp"-->
+<!--        android:layout_marginBottom="300dp"-->
+<!--        android:clickable="true"-->
+<!--        android:onClick="deleteView"-->
+<!--        android:tint="#FFFFFF"-->
+<!--        app:srcCompat="@android:drawable/ic_menu_delete" />-->
 
 </RelativeLayout>

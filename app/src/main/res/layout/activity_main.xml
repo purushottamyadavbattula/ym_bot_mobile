@@ -14,103 +14,197 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="56dp"
+            android:background="#F7BB09"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YM Chatbot Demo"
+                android:textColor="#000000"
+                android:textSize="27dp" />
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-<!--    <include layout="@layout/content_main" />-->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="332dp"
+        android:layout_height="69dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="83dp"
+        android:text="@string/ymBotDes"
+        android:textColor="#000000" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="332dp"
+        android:layout_height="131dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="194dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="236dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="19dp"
+                android:layout_marginBottom="90dp"
+                android:text="Bot Configurations"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginRight="277dp"
+                android:layout_marginBottom="60dp"
+                android:text="Bot iD"
+                android:textColor="#000000"
+                android:textStyle="bold" />
 
 
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="92dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="23dp"
+                android:checked="true"
+                android:enabled="true"
+                android:text="Enable History"
+                android:textColor="#000000"
+                android:textColorHighlight="#CDDC39"
+                android:textColorLink="#FFEB3B"
+                android:textStyle="bold"
+                android:thumbTint="#FFC107" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_marginStart="12dp"-->
-<!--        android:layout_marginTop="99dp"-->
-<!--        android:text="Bot id"-->
-<!--        android:textColor="#000000"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textStyle="bold" />-->
+            <EditText
+                android:id="@+id/botid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="146dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="55dp"
+                android:ems="10"
+                android:hint="x5678904321"
+                android:inputType="textPersonName"
+                android:textSize="14dp"
+                android:backgroundTint="#F7BB09"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
-<!--    <EditText-->
-<!--        android:id="@+id/botid"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginStart="149dp"-->
-<!--        android:layout_marginTop="93dp"-->
-<!--        android:ems="10"-->
-<!--        android:hint="x554321"-->
-<!--        android:inputType="textPersonName" />-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="332dp"
+        android:layout_height="199dp"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="350dp">
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView4"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_marginStart="9dp"-->
-<!--        android:layout_marginTop="159dp"-->
-<!--        android:text="Bot name"-->
-<!--        android:textColor="#000000"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textStyle="bold" />-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-<!--    <EditText-->
-<!--        android:id="@+id/botname"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_marginTop="149dp"-->
-<!--        android:layout_marginEnd="48dp"-->
-<!--        android:ems="10"-->
-<!--        android:hint="YellowMessenger"-->
-<!--        android:inputType="textPersonName" />-->
+            <LinearLayout
+                android:id="@+id/payloadsDynamic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical" />
 
-<!--    <Switch-->
-<!--        android:id="@+id/switch1"-->
-<!--        android:layout_width="248dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_marginTop="217dp"-->
-<!--        android:layout_marginEnd="150dp"-->
-<!--        android:checked="true"-->
-<!--        android:text="Enable history"-->
-<!--        android:textColor="#000000"-->
-<!--        android:textOff="false"-->
-<!--        android:textOn="true"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textStyle="bold"-->
-<!--        tools:checked="true" />-->
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/payloadsDynamic"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_marginStart="2dp"-->
-<!--        android:layout_marginTop="300dp"-->
-<!--        android:orientation="vertical"></LinearLayout>-->
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="334dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:background="#FFC107"
+        android:onClick="createApp"
+        android:text="Button"
+        android:textColor="#000000" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="104dp"
+        android:clickable="true"
+        android:tint="#000000"
+        app:backgroundTint="#FFC107"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:onClick="addDynamicView"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="104dp"
+        android:clickable="true"
+        android:tint="#000000"
+        app:backgroundTint="#FFC107"
+        app:srcCompat="@android:drawable/ic_input_delete"
+        android:visibility="gone"
+        android:onClick="deleteView"/>
+
+    <!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="352dp"-->
+<!--        android:layout_marginEnd="4dp"-->
+<!--        android:layout_marginBottom="300dp"-->
+<!--        android:background="#FFC107"-->
+<!--        android:text="+"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button3"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginLeft="352dp"-->
+<!--        android:layout_marginBottom="240dp"-->
+<!--        android:background="#FFC107"-->
+<!--        android:text="-"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold" />-->
+
+    <!--    <include layout="@layout/content_main" />-->
 
 
 </RelativeLayout>
