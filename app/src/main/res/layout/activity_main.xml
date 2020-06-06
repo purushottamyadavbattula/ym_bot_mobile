@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+<!--    <include layout="@layout/content_main" />-->
+
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginStart="12dp"-->
+<!--        android:layout_marginTop="99dp"-->
+<!--        android:text="Bot id"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/botid"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="149dp"-->
+<!--        android:layout_marginTop="93dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="x554321"-->
+<!--        android:inputType="textPersonName" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginStart="9dp"-->
+<!--        android:layout_marginTop="159dp"-->
+<!--        android:text="Bot name"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/botname"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginTop="149dp"-->
+<!--        android:layout_marginEnd="48dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="YellowMessenger"-->
+<!--        android:inputType="textPersonName" />-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/switch1"-->
+<!--        android:layout_width="248dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginTop="217dp"-->
+<!--        android:layout_marginEnd="150dp"-->
+<!--        android:checked="true"-->
+<!--        android:text="Enable history"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textOff="false"-->
+<!--        android:textOn="true"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        tools:checked="true" />-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/payloadsDynamic"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginStart="2dp"-->
+<!--        android:layout_marginTop="300dp"-->
+<!--        android:orientation="vertical"></LinearLayout>-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+
+</RelativeLayout>
