@@ -15,9 +15,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            app:title="dfasfsa"
             android:background="#F7BB09"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -106,34 +106,87 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="75dp"
                 android:layout_marginBottom="55dp"
+                android:backgroundTint="#F7BB09"
                 android:ems="10"
                 android:hint="x5678904321"
                 android:inputType="textPersonName"
-                android:textSize="14dp"
-                android:backgroundTint="#F7BB09"/>
+                android:textSize="14dp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="332dp"
-        android:layout_height="199dp"
+        android:layout_height="310dp"
         android:layout_alignParentTop="false"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="350dp">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="230dp">
+
+                <LinearLayout
+                    android:id="@+id/payloadsDynamic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="vertical"></LinearLayout>
+
+
+            </ScrollView>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp" />
 
             <LinearLayout
-                android:id="@+id/payloadsDynamic"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:orientation="vertical" />
+                android:layoutDirection="rtl">
 
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp" />
 
-        </ScrollView>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:clickable="true"
+                    android:onClick="addDynamicView"
+                    android:tint="#000000"
+                    app:backgroundTint="#FFC107"
+                    app:srcCompat="@android:drawable/ic_input_add" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="deleteView"
+                    android:tint="#000000"
+                    android:visibility="gone"
+                    app:backgroundTint="#FFC107"
+                    app:srcCompat="@android:drawable/ic_input_delete" />
+
+            </LinearLayout>
+            <View
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
+        </LinearLayout>
+        <View
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
     </androidx.cardview.widget.CardView>
 
     <Button
@@ -148,62 +201,63 @@
         android:text="Button"
         android:textColor="#000000" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="104dp"
-        android:clickable="true"
-        android:tint="#000000"
-        app:backgroundTint="#FFC107"
-        app:srcCompat="@android:drawable/ic_input_add"
-        android:onClick="addDynamicView"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/remove"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="104dp"
-        android:clickable="true"
-        android:tint="#000000"
-        app:backgroundTint="#FFC107"
-        app:srcCompat="@android:drawable/ic_input_delete"
-        android:visibility="gone"
-        android:onClick="deleteView"/>
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/add"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginEnd="40dp"-->
+    <!--        android:layout_marginBottom="104dp"-->
+    <!--        android:clickable="true"-->
+    <!--        android:tint="#000000"-->
+    <!--        app:backgroundTint="#FFC107"-->
+    <!--        app:srcCompat="@android:drawable/ic_input_add"-->
+    <!--        android:onClick="addDynamicView"/>-->
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/remove"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginEnd="104dp"-->
+    <!--        android:layout_marginBottom="104dp"-->
+    <!--        android:clickable="true"-->
+    <!--        android:tint="#000000"-->
+    <!--        app:backgroundTint="#FFC107"-->
+    <!--        app:srcCompat="@android:drawable/ic_input_delete"-->
+    <!--        android:visibility="gone"-->
+    <!--        android:onClick="deleteView"/>-->
 
     <!--    <Button-->
-<!--        android:id="@+id/button2"-->
-<!--        android:layout_width="60dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="352dp"-->
-<!--        android:layout_marginEnd="4dp"-->
-<!--        android:layout_marginBottom="300dp"-->
-<!--        android:background="#FFC107"-->
-<!--        android:text="+"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textStyle="bold" />-->
+    <!--        android:id="@+id/button2"-->
+    <!--        android:layout_width="60dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentStart="true"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginStart="352dp"-->
+    <!--        android:layout_marginEnd="4dp"-->
+    <!--        android:layout_marginBottom="300dp"-->
+    <!--        android:background="#FFC107"-->
+    <!--        android:text="+"-->
+    <!--        android:textSize="20dp"-->
+    <!--        android:textStyle="bold" />-->
 
-<!--    <Button-->
-<!--        android:id="@+id/button3"-->
-<!--        android:layout_width="60dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginLeft="352dp"-->
-<!--        android:layout_marginBottom="240dp"-->
-<!--        android:background="#FFC107"-->
-<!--        android:text="-"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textStyle="bold" />-->
+    <!--    <Button-->
+    <!--        android:id="@+id/button3"-->
+    <!--        android:layout_width="60dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginLeft="352dp"-->
+    <!--        android:layout_marginBottom="240dp"-->
+    <!--        android:background="#FFC107"-->
+    <!--        android:text="-"-->
+    <!--        android:textSize="20dp"-->
+    <!--        android:textStyle="bold" />-->
 
     <!--    <include layout="@layout/content_main" />-->
 
