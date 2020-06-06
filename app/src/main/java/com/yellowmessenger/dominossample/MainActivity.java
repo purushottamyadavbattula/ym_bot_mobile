@@ -1,8 +1,12 @@
 package com.yellowmessenger.dominossample;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 
@@ -11,8 +15,11 @@ import com.example.ymwebview.YMBotPlugin;
 import com.example.ymwebview.models.BotEventsModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.util.Log;
 import android.view.Menu;
@@ -26,7 +33,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import static android.Manifest.permission.ACCESS_NETWORK_STATE;
+import static android.Manifest.permission.INTERNET;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.RECORD_AUDIO;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 public class MainActivity extends AppCompatActivity {
     String configData = "";
     //    LinearLayout dynamicLayout;
@@ -46,14 +57,30 @@ public class MainActivity extends AppCompatActivity {
     HashMap<String, Object> payloadData;
     HashMap<String, String> dynamicContenct;
     FloatingActionButton fabRemover;
-
+    int REQUEST_MICROPHONE=1;
+    AlertDialog.Builder alt;
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        alt = new AlertDialog.Builder(this);
+        alt.setTitle("Permissions required");
+        alt.setCancelable(false);
+        alt.setMessage("Sorry we can't forward with out all the required permissions");
+        alt.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                requestpermission();
+            }
+        });
+        requestpermission();
 
         fabRemover=findViewById(R.id.remove);
         dynamicLayout = findViewById(R.id.payloadsDynamic);
@@ -214,5 +241,25 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void requestpermission() {
+        ActivityCompat.requestPermissions(this,
+                new String[]{
+                        INTERNET,
+                        ACCESS_NETWORK_STATE,
+                        RECORD_AUDIO
+                }, 1);
+        if (ContextCompat.checkSelfPermission(getApplicationContext(), INTERNET)
+                        != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_NETWORK_STATE)
+                        != PackageManager.PERMISSION_GRANTED||
+                        ContextCompat.checkSelfPermission(getApplicationContext(), RECORD_AUDIO)
+                                != PackageManager.PERMISSION_GRANTED) {
+            //Log.i(permissions, "permissions not given");
+            alt.show();
+            // Permission is not granted
+        } else {
+            //Log.i(permissions, "permissions given");
 
+        }
+    }
 }

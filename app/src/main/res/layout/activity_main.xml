@@ -15,6 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            app:title="dfasfsa"
             android:background="#F7BB09"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
