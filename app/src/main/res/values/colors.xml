@@ -5,5 +5,7 @@
     <color name="colorAccent">#E31837</color>
 
     <color name="black_overlay">#66000000</color>
-    <color name="bot_color">#F7BB09</color>
+    <color name="bot_color">#F7BB09 </color>
+    <color name="bot_color_status">#e0a606</color>
+
 </resources>

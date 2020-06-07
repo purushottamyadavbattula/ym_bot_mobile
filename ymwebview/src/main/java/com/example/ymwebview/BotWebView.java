@@ -2,8 +2,12 @@ package com.example.ymwebview;
 
 
 
+import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.speech.RecognitionListener;
@@ -12,6 +16,8 @@ import android.speech.SpeechRecognizer;
 import android.util.Log;
 
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,7 +25,11 @@ import android.widget.Toast;
 
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.ymwebview.models.ConfigDataModel;
@@ -28,16 +38,43 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import static android.Manifest.permission.ACCESS_NETWORK_STATE;
+import static android.Manifest.permission.INTERNET;
+import static android.Manifest.permission.RECORD_AUDIO;
+
 
 public class BotWebView extends AppCompatActivity {
     private final String TAG = "YM WebView Plugin";
     WebviewOverlay fh;
 
-
+    AlertDialog.Builder alt;
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        this.getWindow().setFlags(
+//                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_bot_web_view);
+
+        Window window =getWindow();
+        window.setStatusBarColor(getResources().getColor(R.color.bot_color));
+
+
+        alt = new AlertDialog.Builder(this);
+        alt.setTitle("Permissions required");
+        alt.setCancelable(false);
+        alt.setMessage("Sorry we can't forward with out all the required permissions");
+        alt.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                requestpermission();
+            }
+        });
+        requestpermission();
+
         fh=new WebviewOverlay();
         FragmentManager fragManager=getSupportFragmentManager();
         fragManager.beginTransaction()
@@ -165,7 +202,27 @@ public class BotWebView extends AppCompatActivity {
             Log.d(TAG, "onEvent " + eventType);
         }
     }
+    private void requestpermission() {
+        ActivityCompat.requestPermissions(this,
+                new String[]{
+                        INTERNET,
+                        ACCESS_NETWORK_STATE,
+                        RECORD_AUDIO
+                }, 1);
+        if (ContextCompat.checkSelfPermission(getApplicationContext(), INTERNET)
+                != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_NETWORK_STATE)
+                        != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(getApplicationContext(), RECORD_AUDIO)
+                        != PackageManager.PERMISSION_GRANTED) {
+            //Log.i(permissions, "permissions not given");
+            alt.show();
+            // Permission is not granted
+        } else {
+            //Log.i(permissions, "permissions given");
 
+        }
+    }
 
 }
 

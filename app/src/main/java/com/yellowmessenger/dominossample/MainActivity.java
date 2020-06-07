@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.example.ymwebview.BotEventListener;
@@ -15,6 +16,7 @@ import com.example.ymwebview.YMBotPlugin;
 import com.example.ymwebview.models.BotEventsModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,7 +26,9 @@ import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -33,18 +37,20 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 import static android.Manifest.permission.ACCESS_NETWORK_STATE;
 import static android.Manifest.permission.INTERNET;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 public class MainActivity extends AppCompatActivity {
     String configData = "";
     //    LinearLayout dynamicLayout;
 //    EditText botnameView,
 //            botidView;
 //    boolean enableHistory=true;
-    String botname="Ym chatbot demo";
+    String botname = "Ym chatbot demo";
     String bot_id;
     String enableHistory;
     LinearLayout dynamicLayout;
@@ -56,14 +62,18 @@ public class MainActivity extends AppCompatActivity {
     boolean enableHistoryChange;
     HashMap<String, Object> payloadData;
     HashMap<String, String> dynamicContenct;
-    FloatingActionButton fabRemover;
-    int REQUEST_MICROPHONE=1;
+    FloatingActionButton fabRemover, fabAdder;
+    int REQUEST_MICROPHONE = 1;
     AlertDialog.Builder alt;
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Window window =getWindow();
+        window.setStatusBarColor(getResources().getColor(R.color.bot_color_status));
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -82,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
         });
         requestpermission();
 
-        fabRemover=findViewById(R.id.remove);
+        fabAdder = findViewById(R.id.add);
+        fabRemover = findViewById(R.id.remove);
         dynamicLayout = findViewById(R.id.payloadsDynamic);
         botidView = findViewById(R.id.botid);
 //        botnameView = findViewById(R.id.botname);
@@ -103,6 +114,19 @@ public class MainActivity extends AppCompatActivity {
         et.getBackground().setColorFilter(getResources().getColor(R.color.bot_color), PorterDuff.Mode.SRC_ATOP);
         dynamicLayout.addView(et);
         ids.add(0);
+        et.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                fabAdder.setVisibility(View.VISIBLE);
+                return false;
+            }
+        });
+//        et.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                fabAdder.setVisibility(View.VISIBLE);
+//            }
+//        });
     }
 
     public void createBot() {
@@ -136,8 +160,7 @@ public class MainActivity extends AppCompatActivity {
         et.getBackground().setColorFilter(getResources().getColor(R.color.bot_color), PorterDuff.Mode.SRC_ATOP);
         dynamicLayout.addView(et);
         ids.add(id);
-        if(ids.size()>1)
-        {
+        if (ids.size() > 1) {
             fabRemover.setVisibility(View.VISIBLE);
         }
     }
@@ -150,8 +173,7 @@ public class MainActivity extends AppCompatActivity {
             ids.remove(ids.size() - 1);
             Log.i("bot_arr", ids.toString());
         }
-        if(ids.size()<=1)
-        {
+        if (ids.size() <= 1) {
             fabRemover.setVisibility(View.GONE);
         }
     }
@@ -249,11 +271,11 @@ public class MainActivity extends AppCompatActivity {
                         RECORD_AUDIO
                 }, 1);
         if (ContextCompat.checkSelfPermission(getApplicationContext(), INTERNET)
-                        != PackageManager.PERMISSION_GRANTED ||
+                != PackageManager.PERMISSION_GRANTED ||
                 ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_NETWORK_STATE)
-                        != PackageManager.PERMISSION_GRANTED||
-                        ContextCompat.checkSelfPermission(getApplicationContext(), RECORD_AUDIO)
-                                != PackageManager.PERMISSION_GRANTED) {
+                        != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(getApplicationContext(), RECORD_AUDIO)
+                        != PackageManager.PERMISSION_GRANTED) {
             //Log.i(permissions, "permissions not given");
             alt.show();
             // Permission is not granted

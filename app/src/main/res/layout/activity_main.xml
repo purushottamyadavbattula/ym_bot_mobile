@@ -162,6 +162,7 @@
                     android:onClick="addDynamicView"
                     android:tint="#000000"
                     app:backgroundTint="#FFC107"
+                    android:visibility="gone"
                     app:srcCompat="@android:drawable/ic_input_add" />
 
                 <View

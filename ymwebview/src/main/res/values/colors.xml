@@ -8,4 +8,8 @@
     <color name="transparent">#00FFFFFF</color>
 
     <color name="black_overlay">#66000000</color>
+<!--    <color name="bot_color">#F7BB09 </color>-->
+<!--    #e0a606-->
+    <color name="bot_color">#e0a606 </color>
+
 </resources>
